@@ -49,7 +49,7 @@ class Logic
             return false;
 
 
-        return Logic::analyse_portals($mode_portals, $orbs, $dual_portals) | Logic::analyse_start($orbs);
+        return Logic::analyse_portals($mode_portals, $orbs, $dual_portals) | ($level->settings->dual_mode ? Logic::analyse_start($orbs) : false);
     }
 
     public static function analyse_portals($mode, $orbs, $dual)
