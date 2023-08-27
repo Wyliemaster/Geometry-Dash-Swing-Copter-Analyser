@@ -113,5 +113,7 @@ class Logic
         if (count($orbs_within_threshold) >= GlobalVariables::ORBS_BEFORE_SWING_IS_DETECTED) {
             return true;
         }
+
+        return false;
     }
 }
