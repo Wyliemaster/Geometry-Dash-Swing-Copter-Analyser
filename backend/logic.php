@@ -10,7 +10,11 @@ class Logic
 
     public static function create_level_from_post_data($key = "level_string")
     {
-        $post_data = Logic::decompress($_POST[$key]);
+        if (str_starts_with($_POST[$key], "kS1")) {
+            $post_data = $_POST[$key];
+        } else {
+            $post_data = Logic::decompress($_POST[$key]);
+        }
         return Level::create($post_data);
     }
 
